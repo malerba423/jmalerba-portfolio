@@ -1,0 +1,120 @@
+.exp__timeline {
+  display: flex;
+  flex-direction: column;
+}
+
+.exp__item {
+  display: flex;
+  gap: 24px;
+}
+
+.exp__marker {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+  padding-top: 6px;
+}
+
+.exp__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--accent);
+  flex-shrink: 0;
+  box-shadow: 0 0 0 3px var(--accent-muted);
+}
+
+.exp__line {
+  width: 1px;
+  flex: 1;
+  background: var(--border-light);
+  margin: 6px 0;
+  min-height: 32px;
+}
+
+.exp__card {
+  flex: 1;
+  padding-bottom: 40px;
+}
+
+.exp__item:last-child .exp__card {
+  padding-bottom: 0;
+}
+
+.exp__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.exp__company {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--white);
+  letter-spacing: -0.01em;
+}
+
+.exp__title {
+  font-size: 0.9rem;
+  color: var(--accent);
+  margin-top: 2px;
+  font-weight: 500;
+}
+
+.exp__meta {
+  text-align: right;
+  flex-shrink: 0;
+}
+
+.exp__dates {
+  display: block;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.exp__location {
+  display: block;
+  font-size: 0.78rem;
+  color: var(--text-dim);
+  margin-top: 2px;
+}
+
+.exp__bullets {
+  list-style: none;
+  margin-bottom: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.exp__bullets li {
+  font-size: 0.88rem;
+  color: var(--text);
+  line-height: 1.6;
+  padding-left: 14px;
+  position: relative;
+}
+
+.exp__bullets li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: var(--text-dim);
+  font-size: 0.75rem;
+  top: 2px;
+}
+
+.exp__tech {
+  margin-top: 10px;
+}
+
+@media (max-width: 640px) {
+  .exp__meta {
+    text-align: left;
+  }
+}

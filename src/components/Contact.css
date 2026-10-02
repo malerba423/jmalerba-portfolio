@@ -1,0 +1,23 @@
+.contact__inner {
+  text-align: center;
+  max-width: 560px;
+}
+
+.contact__title {
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 700;
+  color: var(--white);
+  letter-spacing: -0.03em;
+  margin-bottom: 16px;
+}
+
+.contact__sub {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin-bottom: 36px;
+}
+
+.contact__btn {
+  font-size: 0.9rem;
+}

@@ -1,0 +1,112 @@
+.projects__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.project-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 20px;
+  transition: border-color 0.2s, transform 0.2s;
+  border-top: 2px solid var(--accent);
+}
+
+.project-card:hover {
+  border-color: var(--border-light);
+  border-top-color: var(--accent-light);
+  transform: translateY(-2px);
+}
+
+.project-card__top {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.project-card__badge {
+  display: inline-block;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  padding: 2px 7px;
+  width: fit-content;
+}
+
+.project-card__context {
+  font-size: 0.75rem;
+  color: var(--accent);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+.project-card__title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--white);
+  letter-spacing: -0.01em;
+}
+
+.project-card__desc {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.project-card__bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.project-card__links {
+  display: flex;
+  gap: 14px;
+}
+
+.project-card__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+
+.project-card__link:hover {
+  color: var(--accent);
+}
+
+.project-card--placeholder {
+  border-style: dashed;
+  border-top-style: dashed;
+  border-top-width: 1px;
+  border-top-color: var(--border);
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 160px;
+}
+
+.project-card--placeholder:hover {
+  transform: none;
+  border-color: var(--border-light);
+}
+
+.project-card__placeholder-text {
+  font-size: 0.82rem;
+  color: var(--text-dim);
+  font-style: italic;
+}
