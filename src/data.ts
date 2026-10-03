@@ -20,8 +20,8 @@ export interface Project {
 export const experience: Job[] = [
   {
     company: 'Transition Bike Company',
-    title: 'Software Developer',
-    location: 'Bellingham, WA (remote)',
+    title: 'Lead Software Engineer',
+    location: 'Bellingham, WA',
     dates: 'Apr 2021 – Sep 2026',
     tech: ['React', 'NodeJS', 'Adobe ColdFusion', 'Socket.IO', 'Stripe', 'PostgreSQL'],
     bullets: [
