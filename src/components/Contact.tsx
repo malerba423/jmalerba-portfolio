@@ -1,3 +1,4 @@
+import { profile } from '../data'
 import './Contact.css'
 
 export default function Contact() {
@@ -10,8 +11,8 @@ export default function Contact() {
           I'm currently open to new opportunities — SE II / III roles, ideally full-stack
           React &amp; Node. Remote-friendly.
         </p>
-        <a href="mailto:malerba423@gmail.com" className="btn btn-primary contact__btn">
-          malerba423@gmail.com
+        <a href={`mailto:${profile.email}`} className="btn btn-primary contact__btn">
+          {profile.email}
         </a>
       </div>
     </section>

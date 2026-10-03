@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import ResumeDownload from './ResumeDownload'
 import './Nav.css'
 
 interface NavLink {
@@ -34,7 +35,7 @@ export default function Nav() {
             </li>
           ))}
           <li>
-            <a href="/resume" className="nav__resume-link">Resume</a>
+            <ResumeDownload className="nav__resume-link" />
           </li>
         </ul>
         <button

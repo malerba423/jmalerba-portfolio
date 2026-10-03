@@ -123,3 +123,11 @@ export const projects: Project[] = [
     proprietary: true,
   },
 ]
+
+export const profile = {
+  name: 'Joel Malerba',
+  title: 'Full-Stack Software Engineer',
+  email: 'malerba423@gmail.com',
+  website: 'jmalerba.dev',
+  bio: '13 years building production systems across e-commerce, transportation, healthcare, and the bike industry. React & Node on the daily — with a solid grounding in the messy back-office systems that actually run businesses.',
+}
