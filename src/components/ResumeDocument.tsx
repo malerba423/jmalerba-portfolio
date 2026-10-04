@@ -1,5 +1,5 @@
 import { Document, Page, Text, View, Link, StyleSheet, Font } from '@react-pdf/renderer'
-import { profile, experience, skills, projects } from '../data'
+import { profile, experience, education, skills, projects } from '../data'
 
 // Keep words intact — hyphenated tech names look wrong and hurt ATS keyword matching.
 Font.registerHyphenationCallback(word => [word])
@@ -89,6 +89,15 @@ export default function ResumeDocument() {
               <Text style={s.skillList}>{items.join(', ')}</Text>
             </View>
           ))}
+        </View>
+
+        <View style={s.section} wrap={false}>
+          <Text style={s.heading}>Education</Text>
+          <View style={s.jobHeader}>
+            <Text style={s.jobTitle}>{education.degree} · {education.school}</Text>
+            <Text style={s.jobMeta}>{education.year}</Text>
+          </View>
+          <Text style={s.jobMeta}>{education.details}</Text>
         </View>
 
         <View style={s.section}>
