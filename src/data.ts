@@ -25,13 +25,13 @@ export const experience: Job[] = [
     dates: 'Apr 2021 – Sep 2026',
     tech: ['React', 'NodeJS', 'Adobe ColdFusion', 'Socket.IO', 'Stripe', 'PostgreSQL'],
     bullets: [
-      'Primary engineer on a two-person team alongside the owner — owned systems such as the food truck POS and a centralized print service end to end: development, deployment, SSL certificate issuance and renewal, and ongoing support.',
-      'Built and maintained customer-facing and internal web applications using React and NodeJS alongside Adobe ColdFusion legacy services.',
-      'Built a full POS and kitchen order ticketing system from scratch — React/Node with Socket.IO for real-time order status between the cashier screen and kitchen display.',
+      'Primary engineer on a two-person team alongside the owner. Sole developer of the food truck POS and a centralized print service — designed, wrote, deployed, and ran both myself, from the first line of code through hosting, SSL certificates, and uptime monitoring.',
+      'Built a restaurant point-of-sale and kitchen ticketing system from scratch in NodeJS, React, and Socket.IO, combining REST endpoints with Socket.IO events to deliver real-time order status to customers and to cooks in the kitchen.',
+      'Helped implement resource provisioning and caching for transitionbikes.com to keep the site up through high-traffic bike launches.',
       'Implemented PCI-compliant payment processing for both the food truck POS and the Transition Bikes e-commerce platform.',
-      'Built a centralized NodeJS print service, hosted on an on-premises server, used across the business to send receipts and labels to multiple thermal receipt and label printers.',
+      'Built a centralized NodeJS print service, hosted on an on-premises server, that let staff across the business print receipts and labels to multiple thermal receipt and label printers.',
       'Wrote scheduled PowerShell and Bash health checks for the POS front end, POS back end, and print service that polled each uptime endpoint and automatically restarted any service that failed to respond.',
-      'Worked closely with product and marketing to ship features and improvements across the e-commerce platform and dealer-facing portal.',
+      'Built and maintained customer-facing and internal web applications in React and NodeJS alongside Adobe ColdFusion legacy services, working with product and marketing across the e-commerce platform and dealer portal.',
     ],
   },
   {
@@ -87,7 +87,7 @@ export const experience: Job[] = [
 export const education = {
   school: 'University of Miami',
   year: '2013',
-  degree: 'Bachelors in Computer Science, Finance',
+  degree: 'B.S. in Computer Science and Finance',
   details: 'Minor in Graphic Design · GPA 3.9/4.0',
 }
 
@@ -140,6 +140,7 @@ export const profile = {
   name: 'Joel Malerba',
   title: 'Full-Stack Software Engineer',
   email: 'malerba423@gmail.com',
+  phone: '(518) 881-8563',
   website: 'jmalerba.dev',
   bio: '13 years building production systems across e-commerce, transportation, healthcare, and the bike industry. React & Node on the daily — with a solid grounding in the messy back-office systems that actually run businesses.',
 }

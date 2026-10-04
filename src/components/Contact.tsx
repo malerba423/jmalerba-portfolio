@@ -8,8 +8,8 @@ export default function Contact() {
         <p className="section-eyebrow">Say hello</p>
         <h2 className="contact__title">Let's work together.</h2>
         <p className="contact__sub">
-          I'm currently open to new opportunities — SE II / III roles, ideally full-stack
-          React &amp; Node. Remote-friendly.
+          I'm currently open to new opportunities — senior full-stack roles, ideally
+          React &amp; Node.
         </p>
         <a href={`mailto:${profile.email}`} className="btn btn-primary contact__btn">
           {profile.email}

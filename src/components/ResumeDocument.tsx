@@ -56,6 +56,7 @@ export default function ResumeDocument() {
           <Text style={s.title}>{profile.title}</Text>
           <View style={s.contact}>
             <Link src={`mailto:${profile.email}`} style={s.link}>{profile.email}</Link>
+            <Text>{profile.phone}</Text>
             <Link src={`https://${profile.website}`} style={s.link}>https://{profile.website}</Link>
           </View>
           <Text style={s.bio}>{profile.bio}</Text>
