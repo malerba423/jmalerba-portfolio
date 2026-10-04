@@ -7,16 +7,17 @@
 :root {
   --bg:            #0c0c0c;
   --surface:       #131313;
-  --card:          #191919;
-  --card-hover:    #1e1e1e;
-  --border:        #222222;
-  --border-light:  #2c2c2c;
+  --panel:         #1f1f1d;
+  --card:          #2a2a28;
+  --card-hover:    #313130;
+  --border:        #262624;
+  --border-light:  #3a3a36;
   --accent:        #FBA418;
   --accent-light:  #fdc054;
   --accent-muted:  rgba(251, 164, 24, 0.08);
-  --text:          #c8c8bc;
-  --text-muted:    #717168;
-  --text-dim:      #454540;
+  --text:          #d4d4ca;
+  --text-muted:    #a6a69c;
+  --text-dim:      #8a8a80;
   --white:         #edede9;
   --font:          'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   --max-w:         1080px;
@@ -51,7 +52,20 @@ a:hover {
 }
 
 section {
-  padding: 96px 0;
+  padding: 20px 24px;
+}
+
+/* Each content section sits in its own panel; the hero and contact sections stay open. */
+section:not(.hero):not(#contact) > .container {
+  background: var(--panel);
+  border: 1px solid var(--border-light);
+  border-radius: 10px;
+  padding: 48px 40px;
+}
+
+#contact {
+  padding-top: 72px;
+  padding-bottom: 72px;
 }
 
 .section-eyebrow {
@@ -68,7 +82,7 @@ section {
   font-weight: 700;
   color: var(--white);
   letter-spacing: -0.025em;
-  margin-bottom: 52px;
+  margin-bottom: 36px;
 }
 
 .tag {
@@ -134,6 +148,10 @@ section {
 
 @media (max-width: 640px) {
   section {
-    padding: 64px 0;
+    padding: 12px 16px;
+  }
+
+  section:not(.hero):not(#contact) > .container {
+    padding: 32px 20px;
   }
 }
