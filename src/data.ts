@@ -122,7 +122,7 @@ export const projects: Project[] = [
     description: 'Tells you which side of the plane to sit on for the view. Computes the flight path, nearby landmarks, and sun position for a route and departure time. Unit-tested TypeScript core, hosted on Azure Static Web Apps with infrastructure defined in Bicep.',
     tech: ['React', 'TypeScript', 'Vitest', 'Azure Static Web Apps', 'Bicep'],
     github: 'https://github.com/malerba423/window-seat',
-    live: 'https://icy-mud-0e682ef1e.1.azurestaticapps.net',
+    live: 'https://jmalerba.dev/projects/windowseat',
     proprietary: false,
   },
   {
