@@ -23,7 +23,7 @@ export const experience: Job[] = [
     title: 'Software Engineer',
     location: 'Bellingham, WA',
     dates: 'Apr 2021 – Sep 2026',
-    tech: ['React', 'NodeJS', 'Adobe ColdFusion', 'Socket.IO', 'Stripe', 'PostgreSQL', 'AI-Assisted Development'],
+    tech: ['React', 'NodeJS', 'Adobe ColdFusion', 'Socket.IO', 'Stripe', 'MSSQL', 'PostgreSQL', 'AI-Assisted Development'],
     bullets: [
       'Primary engineer on a two-person team alongside the owner. Sole developer of a restaurant POS and kitchen order ticketing system, as well as a centralized receipt and label print service — designed, wrote, deployed, and ran both myself, from the first line of code through hosting, SSL certificates, and uptime monitoring.',
       'Built a restaurant point-of-sale and kitchen ticketing system from scratch in NodeJS, React, and Socket.IO, combining REST endpoints with Socket.IO events to deliver real-time order status to customers and to cooks in the kitchen.',
