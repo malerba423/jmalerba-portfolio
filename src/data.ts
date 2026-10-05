@@ -117,6 +117,15 @@ export const skills: Record<string, string[]> = {
 
 export const projects: Project[] = [
   {
+    title: 'Window Seat',
+    context: 'Personal project',
+    description: 'Tells you which side of the plane to sit on for the view. Computes the flight path, nearby landmarks, and sun position for a route and departure time. Unit-tested TypeScript core, hosted on Azure Static Web Apps with infrastructure defined in Bicep.',
+    tech: ['React', 'TypeScript', 'Vitest', 'Azure Static Web Apps', 'Bicep'],
+    github: 'https://github.com/malerba423/window-seat',
+    live: 'https://icy-mud-0e682ef1e.1.azurestaticapps.net',
+    proprietary: false,
+  },
+  {
     title: 'Food Truck POS & Kitchen Ticketing',
     context: 'Transition Bike Company',
     description: 'Greenfield point-of-sale and kitchen order display system. Orders flow from cashier to kitchen in real time via Socket.IO. PCI-compliant card processing via Stripe Terminal.',
