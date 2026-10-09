@@ -20,22 +20,17 @@ function GitHubIcon() {
 }
 
 function ProjectCard({ project }: { project: Project }) {
+  // Projects with something public to open get the featured treatment.
+  const featured = Boolean(project.github || project.live)
   return (
-    <div className="project-card">
-      <div className="project-card__top">
-        {project.proprietary && (
-          <span className="project-card__badge">Proprietary</span>
-        )}
-        <p className="project-card__context">{project.context}</p>
-        <h3 className="project-card__title">{project.title}</h3>
-        <p className="project-card__desc">{project.description}</p>
-      </div>
-      <div className="project-card__bottom">
-        <div className="project-card__tech">
-          {project.tech.map(t => (
-            <span className="tag" key={t}>{t}</span>
-          ))}
-        </div>
+    <div className={`project-card${featured ? ' project-card--featured' : ''}`}>
+      <p className="project-card__context">
+        {project.context}{project.proprietary && ' · Proprietary'}
+      </p>
+      <h3 className="project-card__title">{project.title}</h3>
+      <p className="project-card__desc">{project.description}</p>
+      <p className="project-card__tech">{project.tech.join(' · ')}</p>
+      {featured && (
         <div className="project-card__links">
           {project.github && (
             <a href={project.github} target="_blank" rel="noreferrer" className="project-card__link">
@@ -48,7 +43,7 @@ function ProjectCard({ project }: { project: Project }) {
             </a>
           )}
         </div>
-      </div>
+      )}
     </div>
   )
 }
@@ -57,15 +52,11 @@ export default function Projects() {
   return (
     <section id="projects">
       <div className="container">
-        <p className="section-eyebrow">Things I've built</p>
-        <h2 className="section-title">Projects</h2>
+        <h2 className="section-title">Things I've built</h2>
         <div className="projects__grid">
           {projects.map(p => (
             <ProjectCard key={p.title} project={p} />
           ))}
-          <div className="project-card project-card--placeholder">
-            <p className="project-card__placeholder-text">More projects coming soon</p>
-          </div>
         </div>
       </div>
     </section>

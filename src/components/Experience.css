@@ -1,120 +1,259 @@
-.exp__timeline {
+.gantt {
   display: flex;
   flex-direction: column;
-}
-
-.exp__item {
-  display: flex;
-  gap: 24px;
-}
-
-.exp__marker {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  flex-shrink: 0;
-  padding-top: 6px;
-}
-
-.exp__dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: var(--accent);
-  flex-shrink: 0;
-  box-shadow: 0 0 0 3px var(--accent-muted);
-}
-
-.exp__line {
-  width: 1px;
-  flex: 1;
-  background: var(--border-light);
-  margin: 6px 0;
-  min-height: 32px;
-}
-
-.exp__card {
-  flex: 1;
-  padding-bottom: 40px;
-}
-
-.exp__item:last-child .exp__card {
-  padding-bottom: 0;
-}
-
-.exp__header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
   gap: 16px;
-  margin-bottom: 16px;
+  padding: 24px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+}
+
+.gantt__years {
+  display: flex;
+  font-family: var(--mono);
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.gantt__year {
+  flex: 1 1 0;
+  min-width: 0;
+  padding: 0 0 8px 6px;
+  border-left: 1px solid var(--line);
+  white-space: nowrap;
+}
+
+.gantt__year-short {
+  display: none;
+}
+
+/* touch-action keeps vertical page scrolling while a horizontal drag scrubs the chart. */
+.gantt__rows {
+  position: relative;
+  border-top: 2px solid var(--ink);
+  cursor: pointer;
+  user-select: none;
+  touch-action: pan-y;
+}
+
+.gantt__grid {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  pointer-events: none;
+}
+
+.gantt__grid > div {
+  flex: 1 1 0;
+  border-left: 1px solid var(--grid);
+}
+
+.gantt__row {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 60px;
+  padding: 0;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--grid);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.gantt__bar {
+  position: absolute;
+  top: 9px;
+  height: 42px;
+  min-width: 12px;
+  border: 3px solid transparent;
+  border-radius: 10px;
+  background: var(--ink);
+  transition: background 0.2s;
+}
+
+.gantt__row--active .gantt__bar {
+  background: var(--accent);
+  border-color: var(--ink);
+}
+
+.gantt__label {
+  position: absolute;
+  top: 18px;
+  padding-left: 12px;
+  font-size: 15px;
+  font-weight: 600;
+  white-space: nowrap;
+  color: var(--ink);
+}
+
+.gantt__label--inside {
+  color: var(--on-ink);
+}
+
+.gantt__marker {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  border-left: 2px solid var(--accent);
+  pointer-events: none;
+}
+
+.gantt__controls {
+  display: flex;
   flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 24px;
 }
 
-.exp__company {
-  font-size: 1.05rem;
-  font-weight: 700;
-  color: var(--white);
-  letter-spacing: -0.01em;
-}
-
-.exp__title {
-  font-size: 0.9rem;
+.gantt__date {
+  flex: 0 0 auto;
+  min-width: min(100%, 320px);
+  font-family: var(--mono);
+  font-size: clamp(40px, 9vw, 64px);
+  line-height: 1;
+  letter-spacing: -0.03em;
   color: var(--accent);
-  margin-top: 2px;
-  font-weight: 500;
 }
 
-.exp__meta {
-  text-align: right;
-  flex-shrink: 0;
-}
-
-.exp__dates {
-  display: block;
-  font-size: 0.82rem;
-  color: var(--text-muted);
-  font-weight: 500;
-}
-
-.exp__location {
-  display: block;
-  font-size: 0.78rem;
-  color: var(--text-dim);
-  margin-top: 2px;
-}
-
-.exp__bullets {
-  list-style: none;
-  margin-bottom: 14px;
+.gantt__slider {
+  flex: 999 1 280px;
+  min-width: 0;
   display: flex;
   flex-direction: column;
-  gap: 8px;
 }
 
-.exp__bullets li {
-  font-size: 0.88rem;
-  color: var(--text);
-  line-height: 1.6;
-  padding-left: 14px;
-  position: relative;
+.gantt__slider input {
+  width: 100%;
+  height: 44px;
+  accent-color: var(--accent);
 }
 
-.exp__bullets li::before {
-  content: '—';
-  position: absolute;
-  left: 0;
-  color: var(--text-dim);
-  font-size: 0.75rem;
-  top: 2px;
+.role {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  overflow: hidden;
 }
 
-.exp__tech {
-  margin-top: 10px;
+/* Matching grow and basis ratios hold the 60 / 40 split at every width. */
+.role__body {
+  flex: 3 1 480px;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 36px;
+}
+
+.role__skills {
+  flex: 2 1 320px;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 36px;
+  background: var(--soft);
+  border-left: 2px dashed var(--line);
+}
+
+.role__company {
+  font-size: clamp(28px, 7vw, 40px);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+}
+
+.role__title {
+  font-size: 19px;
+  font-weight: 600;
+}
+
+.role__meta {
+  font-family: var(--mono);
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.role__bullets {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-left: 20px;
+  color: var(--body);
+}
+
+.role__gap {
+  max-width: 560px;
+  font-size: 18px;
+  color: var(--body);
+}
+
+.role__nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.role__chips {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.chip {
+  padding: 4px 10px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--card);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--muted);
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.chip--on {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+@media (max-width: 860px) {
+  .role__skills {
+    border-left: none;
+    border-top: 2px dashed var(--line);
+  }
 }
 
 @media (max-width: 640px) {
-  .exp__meta {
-    text-align: left;
+  .gantt {
+    padding: 14px;
+  }
+
+  .gantt__years {
+    font-size: 11px;
+  }
+
+  .gantt__year {
+    padding-left: 2px;
+  }
+
+  .gantt__year-full,
+  .gantt__label {
+    display: none;
+  }
+
+  .gantt__year-short {
+    display: inline;
+  }
+
+  .role__body,
+  .role__skills {
+    padding: 22px 18px;
   }
 }

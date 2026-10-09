@@ -6,8 +6,19 @@
     <meta name="description" content="Joel Malerba — Full-Stack Software Engineer specializing in React, NodeJS, and systems design." />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;600;800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
     <title>Joel Malerba — Software Engineer</title>
+    <script>
+      // Set the theme before first paint so the page doesn't flash the wrong one.
+      (function () {
+        var theme
+        try { theme = localStorage.getItem('theme') } catch (e) {}
+        if (theme !== 'light' && theme !== 'dark') {
+          theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+        }
+        document.documentElement.dataset.theme = theme
+      })()
+    </script>
   </head>
   <body>
     <div id="root"></div>

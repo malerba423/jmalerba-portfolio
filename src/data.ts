@@ -3,7 +3,12 @@ export interface Job {
   title: string
   location: string
   dates: string
+  /** First and last month in the role, as YYYY-MM. Drives the timeline chart. */
+  start: string
+  end: string
   tech: string[]
+  /** Entries from `skills` that were in use in this role. Highlighted on the timeline. */
+  skills: string[]
   bullets: string[]
 }
 
@@ -23,7 +28,28 @@ export const experience: Job[] = [
     title: 'Software Engineer',
     location: 'Bellingham, WA',
     dates: 'Apr 2021 – Sep 2026',
+    start: '2021-04',
+    end: '2026-09',
     tech: ['React', 'NodeJS', 'Adobe ColdFusion', 'Socket.IO', 'Stripe', 'MSSQL', 'PostgreSQL', 'AI-Assisted Development'],
+    skills: [
+      'JavaScript / ES6',
+      'React',
+      'NodeJS',
+      'Adobe ColdFusion',
+      'Socket.IO',
+      'Stripe',
+      'PostgreSQL',
+      'MSSQL',
+      'Bash',
+      'PowerShell',
+      'AI-Assisted Development (Claude Code)',
+      'POS Systems Design',
+      'PCI-Compliant Payments',
+      'E-Commerce Platforms',
+      'Dealer & B2B Portals',
+      'Real-Time Event Systems',
+      'RESTful API Design',
+    ],
     bullets: [
       'Primary engineer on a two-person team alongside the owner. Sole developer of a restaurant POS and kitchen order ticketing system, as well as a centralized receipt and label print service — designed, wrote, deployed, and ran both myself, from the first line of code through hosting, SSL certificates, and uptime monitoring.',
       'Built a restaurant point-of-sale and kitchen ticketing system from scratch in NodeJS, React, and Socket.IO, combining REST endpoints with Socket.IO events to deliver real-time order status to customers and to cooks in the kitchen.',
@@ -39,7 +65,14 @@ export const experience: Job[] = [
     title: 'Software Engineer I',
     location: 'Hartford, CT (remote)',
     dates: 'Dec 2020 – Apr 2021',
+    start: '2020-12',
+    end: '2021-04',
     tech: ['JavaScript', 'React', 'NodeJS'],
+    skills: [
+      'JavaScript / ES6',
+      'React',
+      'NodeJS',
+    ],
     bullets: [
       'Built internal tooling and web applications within a large enterprise engineering organization.',
       'Gained experience working at scale — large codebases, formal code review, and enterprise-grade organizational patterns.',
@@ -50,7 +83,23 @@ export const experience: Job[] = [
     title: 'Fullstack Engineer & Team Lead',
     location: 'Madison, WI',
     dates: 'Jan 2020 – Dec 2020',
+    start: '2020-01',
+    end: '2020-12',
     tech: ['React', 'Redux', 'NodeJS', 'Jest', 'PostgreSQL', 'AWS', 'Azure DevOps'],
+    skills: [
+      'JavaScript / ES6',
+      'React',
+      'Redux / Redux Toolkit',
+      'NodeJS',
+      'Express',
+      'Jest',
+      'Test-Driven Development',
+      'PostgreSQL',
+      'AWS (RDS, S3, Elastic Beanstalk)',
+      'Azure DevOps',
+      'Real-Time Event Systems',
+      'RESTful API Design',
+    ],
     bullets: [
       'Full-stack development across applications and microservices in an electric rideshare platform — DB design, APIs, and UI/state management.',
       'Implemented SSO, single-use password-reset tokens, reCAPTCHA, and server-sent events for real-time data delivery to client applications.',
@@ -64,7 +113,18 @@ export const experience: Job[] = [
     title: 'PLM Software Engineer',
     location: 'Waterloo, WI',
     dates: 'Apr 2015 – Aug 2019',
+    start: '2015-04',
+    end: '2019-08',
     tech: ['Java', 'TCL', 'MQL', 'MSSQL', 'Jenkins', 'Subversion'],
+    skills: [
+      'Java',
+      'TCL / MQL',
+      'MSSQL',
+      'Jenkins CI',
+      'Git / Subversion',
+      'Product Lifecycle Management',
+      'ETL & Business Reporting',
+    ],
     bullets: [
       'Extended enterprise PLM software (Dassault 3DExperience) for engineering, product development, and supply chain teams.',
       'Led a major version upgrade — new server architecture, schema and custom code changes, licensing restructure, and data migration.',
@@ -76,7 +136,14 @@ export const experience: Job[] = [
     title: 'BI Software Developer',
     location: 'Madison, WI',
     dates: 'Aug 2013 – Apr 2015',
+    start: '2013-08',
+    end: '2015-04',
     tech: ['Java', 'MSSQL'],
+    skills: [
+      'Java',
+      'MSSQL',
+      'ETL & Business Reporting',
+    ],
     bullets: [
       'Developed specialized reports for aggregated healthcare data spanning all phases of the SDLC.',
       'Built tools used by healthcare organizations to recognize, track, and address trends in patient registration data.',
@@ -151,5 +218,7 @@ export const profile = {
   email: 'malerba423@gmail.com',
   phone: '(518) 881-8563',
   website: 'jmalerba.dev',
+  headline: { emphasis: '13 years', rest: 'building production systems.' },
+  intro: 'Across e-commerce, transportation, healthcare, and the bike industry. React & Node on the daily — with a solid grounding in the messy back-office systems that actually run businesses.',
   bio: '13 years building production systems across e-commerce, transportation, healthcare, and the bike industry. React & Node on the daily — with a solid grounding in the messy back-office systems that actually run businesses.',
 }

@@ -1,5 +1,5 @@
 .footer {
-  border-top: 1px solid var(--border);
+  border-top: 1px solid var(--line);
   padding: 24px 0;
 }
 
@@ -7,8 +7,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 0.78rem;
-  color: var(--text-dim);
+  font-family: var(--mono);
+  font-size: 13px;
+  color: var(--muted);
 }
 
 .footer__right {
