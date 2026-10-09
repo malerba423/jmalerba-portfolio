@@ -27,7 +27,7 @@
 
 /* In the dark theme --ink becomes the light colour, so anything painted with it inverts. */
 :root[data-theme='dark'] {
-  --bg:            #121110;
+  --bg:            #422321;
   --ink:           #f2f0ea;
   --on-ink:        #121110;
   --card:          #181715;

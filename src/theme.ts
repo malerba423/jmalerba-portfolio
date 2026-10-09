@@ -12,7 +12,7 @@ function initialTheme(): Theme {
   } catch {
     // Storage can be blocked (private windows); fall back to the system setting.
   }
-  return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+  return 'dark'
 }
 
 export function useTheme() {
