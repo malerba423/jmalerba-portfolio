@@ -129,6 +129,17 @@ section {
   color: var(--ink);
 }
 
+.btn-accent {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--on-ink);
+  font-weight: 600;
+}
+
+.btn-accent:hover {
+  color: var(--on-ink);
+}
+
 @media (max-width: 640px) {
   .container {
     padding: 0 16px;
