@@ -74,47 +74,68 @@ export default function Experience() {
   const [position, setPosition] = useState(MAX);
   // Stepping past the most recent role shows a "next role" pitch in place of a job.
   const [pitching, setPitching] = useState(false);
+  // With a mouse, moving over the chart previews that date without committing to it.
+  // A click pins the marker and pauses previewing until the pointer leaves the chart.
+  const [preview, setPreview] = useState<number | null>(null);
+  const previewPaused = useRef(false);
   const dragging = useRef(false);
+  const shown = preview ?? position;
+  const showPitch = pitching && preview === null;
 
   // The most recent job started on or before the marker. It is only the active job if
   // the marker hasn't passed its end; otherwise the marker sits in a gap between roles.
   const lastStarted = jobs.reduce(
-    (found, job, i) => (job.from <= position ? i : found),
+    (found, job, i) => (job.from <= shown ? i : found),
     0,
   );
   const activeIndex =
-    !pitching && position <= jobs[lastStarted].to ? lastStarted : -1;
+    !showPitch && shown <= jobs[lastStarted].to ? lastStarted : -1;
   const active = activeIndex >= 0 ? jobs[activeIndex] : null;
-  const usedSkills = new Set(pitching ? allSkills : active?.skills);
+  const usedSkills = new Set(showPitch ? allSkills : active?.skills);
 
   // Any move along the timeline leaves the pitch and goes back to showing roles.
   const moveTo = (months: number) => {
     setPitching(false);
+    setPreview(null);
     setPosition(clamp(months, MIN, MAX));
   };
 
   // Rows span the full chart width, so a row or the rows container gives the same answer.
-  const seek = (clientX: number, track: HTMLElement) => {
+  const monthsAt = (clientX: number, track: HTMLElement) => {
     const rect = track.getBoundingClientRect();
     const months = Math.round(((clientX - rect.left) / rect.width) * SPAN);
-    moveTo(months);
+    return clamp(months, MIN, MAX);
+  };
+
+  const pin = (clientX: number, track: HTMLElement) => {
+    previewPaused.current = true;
+    moveTo(monthsAt(clientX, track));
   };
 
   const onPointerDown = (e: PointerEvent<HTMLDivElement>) => {
     if (e.button !== 0) return;
     dragging.current = true;
     e.currentTarget.setPointerCapture(e.pointerId);
-    seek(e.clientX, e.currentTarget);
+    pin(e.clientX, e.currentTarget);
   };
 
   const onPointerMove = (e: PointerEvent<HTMLDivElement>) => {
     // A release outside the window can go unreported, so stop once the button is no longer held.
     if (!(e.buttons & 1)) dragging.current = false;
-    if (dragging.current) seek(e.clientX, e.currentTarget);
+    if (dragging.current) {
+      pin(e.clientX, e.currentTarget);
+    } else if (e.pointerType === "mouse" && !previewPaused.current) {
+      setPreview(monthsAt(e.clientX, e.currentTarget));
+    }
   };
 
   const stopDragging = () => {
     dragging.current = false;
+  };
+
+  const onPointerLeave = () => {
+    previewPaused.current = false;
+    setPreview(null);
   };
 
   const goTo = (index: number) =>
@@ -159,6 +180,7 @@ export default function Experience() {
               onPointerUp={stopDragging}
               onPointerCancel={stopDragging}
               onLostPointerCapture={stopDragging}
+              onPointerLeave={onPointerLeave}
             >
               <div className="gantt__grid" aria-hidden="true">
                 {years.map((year) => (
@@ -177,7 +199,7 @@ export default function Experience() {
                     onClick={(e) =>
                       e.detail === 0
                         ? goTo(i)
-                        : seek(e.clientX, e.currentTarget)
+                        : pin(e.clientX, e.currentTarget)
                     }
                     aria-label={`${job.company}, ${job.dates}`}
                     aria-pressed={i === activeIndex}
@@ -199,8 +221,8 @@ export default function Experience() {
                 );
               })}
               <div
-                className="gantt__marker"
-                style={{ left: pct(position) }}
+                className={`gantt__marker${preview === null ? "" : " gantt__marker--preview"}`}
+                style={{ left: pct(shown) }}
                 aria-hidden="true"
               />
             </div>
@@ -208,7 +230,7 @@ export default function Experience() {
 
           <div className="gantt__controls">
             <output className="gantt__date" htmlFor="gantt-position">
-              {formatMonth(position)}
+              {formatMonth(shown)}
             </output>
             <div className="gantt__slider">
               <label className="section-eyebrow" htmlFor="gantt-position">
@@ -220,9 +242,9 @@ export default function Experience() {
                 min={MIN}
                 max={MAX}
                 step={1}
-                value={position}
+                value={shown}
                 onChange={(e) => moveTo(Number(e.target.value))}
-                aria-valuetext={formatMonth(position)}
+                aria-valuetext={formatMonth(shown)}
               />
             </div>
           </div>
@@ -230,7 +252,7 @@ export default function Experience() {
 
         <article className="role">
           <div className="role__body">
-            {pitching ? (
+            {showPitch ? (
               <>
                 <p className="section-eyebrow section-eyebrow--accent">
                   Next role · Open
@@ -271,7 +293,7 @@ export default function Experience() {
             ) : (
               <>
                 <p className="section-eyebrow section-eyebrow--accent">
-                  {formatMonth(position)} · Between roles
+                  {formatMonth(shown)} · Between roles
                 </p>
                 <h3 className="role__company">Between roles.</h3>
                 <p className="role__gap">

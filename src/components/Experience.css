@@ -104,6 +104,10 @@
   pointer-events: none;
 }
 
+.gantt__marker--preview {
+  border-left-style: dashed;
+}
+
 .gantt__controls {
   display: flex;
   flex-wrap: wrap;
