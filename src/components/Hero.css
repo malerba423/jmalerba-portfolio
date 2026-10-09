@@ -15,6 +15,10 @@
   letter-spacing: -0.045em;
 }
 
+:root[data-theme='dark'] .hero__name {
+  color: var(--accent);
+}
+
 .hero__headline {
   margin-top: 6px;
   font-size: clamp(26px, 5vw, 40px);

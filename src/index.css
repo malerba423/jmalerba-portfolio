@@ -15,6 +15,8 @@
   --body:          #2c4354;
   --muted:         #3d5567;
   --accent:        #b8461a;
+  --bar:           #10212e;
+  --on-bar:        #ffffff;
   --on-ink-muted:  #d5e0e8;
   --on-ink-accent: #ffb38f;
   --link:          #1d5f8a;
@@ -25,19 +27,21 @@
 
 /* In the dark theme --ink becomes the light colour, so anything painted with it inverts. */
 :root[data-theme='dark'] {
-  --bg:            #0d1620;
-  --ink:           #e8eff5;
-  --on-ink:        #0d1620;
-  --card:          #16222e;
-  --soft:          #121d28;
-  --line:          #2b3b4a;
-  --grid:          #1f2c38;
-  --body:          #c5d3de;
-  --muted:         #9fb3c4;
-  --accent:        #f08a55;
-  --on-ink-muted:  #2c4354;
-  --on-ink-accent: #a23c12;
-  --link:          #8cc4ee;
+  --bg:            #121110;
+  --ink:           #f2f0ea;
+  --on-ink:        #121110;
+  --card:          #181715;
+  --soft:          #141312;
+  --line:          #24221f;
+  --grid:          #1c1b19;
+  --body:          #a19e96;
+  --muted:         #8a877f;
+  --accent:        oklch(0.82 0.13 85);
+  --bar:           #3b3834;
+  --on-bar:        #f2f0ea;
+  --on-ink-muted:  #55524c;
+  --on-ink-accent: #7a5a0a;
+  --link:          oklch(0.82 0.13 85);
 }
 
 html {
