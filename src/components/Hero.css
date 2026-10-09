@@ -10,7 +10,7 @@
 
 .hero__name {
   font-size: clamp(56px, 13vw, 148px);
-  font-weight: 800;
+  font-weight: 600;
   line-height: 0.9;
   letter-spacing: -0.045em;
 }

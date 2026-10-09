@@ -20,8 +20,8 @@
   --on-ink-muted:  #d5e0e8;
   --on-ink-accent: #ffb38f;
   --link:          #1d5f8a;
-  --font:          'Bricolage Grotesque', -apple-system, BlinkMacSystemFont, sans-serif;
-  --mono:          'DM Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+  --font:          'Geist', -apple-system, BlinkMacSystemFont, sans-serif;
+  --mono:          'Geist Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
   --max-w:         1440px;
 }
 
