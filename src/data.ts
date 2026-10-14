@@ -24,8 +24,8 @@ export interface Project {
 
 export const experience: Job[] = [
   {
-    company: 'Transition Bike Company',
-    title: 'Software Engineer',
+    company: 'Transition Bicycle Company',
+    title: 'Fullstack Software Engineer',
     location: 'Bellingham, WA',
     dates: 'Apr 2021 – Sep 2026',
     start: '2021-04',
@@ -49,16 +49,16 @@ export const experience: Job[] = [
       'Dealer & B2B Portals',
       'Real-Time Event Systems',
       'RESTful API Design',
+      'Warehousing & Inventory',
+      'Order Management Systems',
+      'Git / Subversion',
     ],
     bullets: [
-      'Primary engineer on a two-person team alongside the owner. Sole developer of a restaurant POS and kitchen order ticketing system, as well as a centralized receipt and label print service — designed, wrote, deployed, and ran both myself, from the first line of code through hosting, SSL certificates, and uptime monitoring.',
-      'Built a restaurant point-of-sale and kitchen ticketing system from scratch in NodeJS, React, and Socket.IO, combining REST endpoints with Socket.IO events to deliver real-time order status to customers and to cooks in the kitchen.',
-      'Implemented PCI-compliant payment processing for both the food truck POS and the Transition Bikes e-commerce platform.',
-      'Built a centralized NodeJS print service, hosted on an on-premises server, that let staff across the business print receipts and labels to multiple thermal receipt and label printers.',
-      'Wrote scheduled PowerShell and Bash health checks for the POS front end, POS back end, and print service that polled each uptime endpoint and automatically restarted any service that failed to respond.',
-      'Built and maintained customer-facing and internal web applications in React and NodeJS alongside Adobe ColdFusion legacy services, working with product and marketing across the e-commerce platform and dealer portal.',
-      'Helped implement resource provisioning and caching for transitionbikes.com to keep the site up through high-traffic bike launches.',
-    ],
+      'Led development of the e-commerce webstore checkout. I owned the purchase flow from checkout to payment processing and order entry as well as to order fulfillment and shipping integrations.',
+      'Sole developer of the food truck’s point-of-sale and kitchen order ticketing system. I designed, built and maintained it end to end, from order entry and payment to real-time ticket routing to the kitchen.',
+      'Owned the inventory count workflow from design through rollout, replacing manual counts with a system that improved stock accuracy.',
+      'Built and owned the return merchandise (RMA) process, which streamlined how returns were logged, tracked and restocked for customer service and warehouse staff.',
+      'Acted as the primary technical owner across several business-critical systems: I gathered requirements directly from stakeholders, made the architecture decisions and supported the systems in production.',    ],
   },
   {
     company: 'Travelers Insurance',
@@ -75,7 +75,7 @@ export const experience: Job[] = [
     ],
     bullets: [
       'Built internal tooling and web applications within a large enterprise engineering organization.',
-      'Gained experience working at scale — large codebases, formal code review, and enterprise-grade organizational patterns.',
+      'Gained further experience working at scale with larger codebases, more formal code review processes, and enterprise-grade organizational patterns.',
     ],
   },
   {
@@ -109,7 +109,7 @@ export const experience: Job[] = [
     ],
   },
   {
-    company: 'Trek Bicycle Co.',
+    company: 'Trek Bicycle Company',
     title: 'PLM Software Engineer',
     location: 'Waterloo, WI',
     dates: 'Apr 2015 – Aug 2019',
@@ -126,14 +126,14 @@ export const experience: Job[] = [
       'ETL & Business Reporting',
     ],
     bullets: [
-      'Extended enterprise PLM software (Dassault 3DExperience) for engineering, product development, and supply chain teams.',
+      'Extended enterprise enterprise product lifecycle management software (Dassault 3DExperience) for engineering, product development, and supply chain teams.',
       'Led a major version upgrade — new server architecture, schema and custom code changes, licensing restructure, and data migration.',
-      'Built ETL pipelines and reporting tools to give teams real-time and scheduled access to production data across the business.',
+      'Built ETL pipelines and reporting tools to give teams real-time and scheduled access to production data across business platforms.',
     ],
   },
   {
     company: 'Epic Systems',
-    title: 'BI Software Developer',
+    title: 'Business Intelligence Software Developer',
     location: 'Madison, WI',
     dates: 'Aug 2013 – Apr 2015',
     start: '2013-08',
@@ -145,8 +145,8 @@ export const experience: Job[] = [
       'ETL & Business Reporting',
     ],
     bullets: [
-      'Developed specialized reports for aggregated healthcare data spanning all phases of the SDLC.',
-      'Built tools used by healthcare organizations to recognize, track, and address trends in patient registration data.',
+      'Developed specialized reports for aggregated healthcare data spanning all phases of the software development lifecycle.',
+      'Built tools used by healthcare organizations to recognize and track trends in patient registration data to better serve patient populations and better steer decision-making.',
     ],
   },
 ]
