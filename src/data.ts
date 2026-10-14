@@ -58,7 +58,7 @@ export const experience: Job[] = [
       'Sole developer of the food truck’s point-of-sale and kitchen order ticketing system. I designed, built and maintained it end to end, from order entry and payment to real-time ticket routing to the kitchen.',
       'Owned the inventory count workflow from design through rollout, replacing manual counts with a system that improved stock accuracy.',
       'Built and owned the return merchandise (RMA) process, which streamlined how returns were logged, tracked and restocked for customer service and warehouse staff.',
-      'Acted as the primary technical owner across several business-critical systems: I gathered requirements directly from stakeholders, made the architecture decisions and supported the systems in production.',    ],
+      'Acted as the primary technical owner across several business-critical systems where I gathered requirements directly from stakeholders, made the architecture decisions and supported the systems in production.',    ],
   },
   {
     company: 'Travelers Insurance',
