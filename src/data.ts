@@ -193,6 +193,15 @@ export const projects: Project[] = [
     proprietary: false,
   },
   {
+    title: "Joel's Garage & Tinkerings",
+    context: 'Personal project',
+    description: 'A catalog of furniture and other things I build in my garage. Each piece has a photo gallery, a part number, and its sale status, and visitors can claim a piece or send a commission request without a backend: the forms open a pre-filled email.',
+    tech: ['React', 'TypeScript', 'React Router', 'Vite', 'Render'],
+    github: 'https://github.com/malerba423/joels-garage-and-tinkerings',
+    live: 'https://jmalerba.dev/projects/garage',
+    proprietary: false,
+  },
+  {
     title: 'Food Truck POS & Kitchen Ticketing',
     context: 'Transition Bike Company',
     description: 'Greenfield point-of-sale and kitchen order display system. Orders flow from cashier to kitchen in real time via Socket.IO. PCI-compliant card processing via Stripe Terminal.',

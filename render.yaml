@@ -12,6 +12,13 @@ services:
       - type: rewrite
         source: /projects/windowseat/*
         destination: https://icy-mud-0e682ef1e.1.azurestaticapps.net/projects/windowseat/*
+      # Joel's Garage is its own Render static site, served under this path.
+      - type: rewrite
+        source: /projects/garage
+        destination: https://joels-garage.onrender.com/projects/garage/
+      - type: rewrite
+        source: /projects/garage/*
+        destination: https://joels-garage.onrender.com/projects/garage/*
       - type: rewrite
         source: /*
         destination: /index.html
