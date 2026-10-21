@@ -4,6 +4,12 @@ services:
     env: static
     buildCommand: npm install && npm run build
     staticPublishPath: dist
+    headers:
+      # The resume PDF renderer is fetched fresh every time, never from a browser or
+      # Cloudflare cache (a cached bad redirect once broke the Resume button).
+      - path: /assets/chunks/*
+        name: Cache-Control
+        value: no-store
     routes:
       # Window Seat is hosted on Azure and served under this path.
       - type: rewrite
