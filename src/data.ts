@@ -183,15 +183,7 @@ export const skills: Record<string, string[]> = {
 }
 
 export const projects: Project[] = [
-  {
-    title: 'Window Seat',
-    context: 'Personal project',
-    description: 'Tells you which side of the plane to sit on for the view. Computes the flight path, nearby landmarks, and sun position for a route and departure time. Unit-tested TypeScript core, hosted on Azure Static Web Apps with infrastructure defined in Bicep.',
-    tech: ['React', 'TypeScript', 'Vitest', 'Azure Static Web Apps', 'Bicep'],
-    github: 'https://github.com/malerba423/window-seat',
-    live: 'https://jmalerba.dev/projects/windowseat',
-    proprietary: false,
-  },
+
   {
     title: "Joel's Garage & Tinkerings",
     context: 'Personal project',
@@ -199,6 +191,15 @@ export const projects: Project[] = [
     tech: ['React', 'TypeScript', 'React Router', 'Vite', 'Render'],
     github: 'https://github.com/malerba423/joels-garage-and-tinkerings',
     live: 'https://jmalerba.dev/projects/garage',
+    proprietary: false,
+  },
+    {
+    title: 'Window Seat',
+    context: 'Personal project',
+    description: 'Tells you which side of the plane to sit on for the view. Computes the flight path, nearby landmarks, and sun position for a route and departure time. Unit-tested TypeScript core, hosted on Azure Static Web Apps with infrastructure defined in Bicep.',
+    tech: ['React', 'TypeScript', 'Vitest', 'Azure Static Web Apps', 'Bicep'],
+    github: 'https://github.com/malerba423/window-seat',
+    live: 'https://jmalerba.dev/projects/windowseat',
     proprietary: false,
   },
   {
