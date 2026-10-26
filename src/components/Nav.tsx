@@ -1,10 +1,10 @@
-import ResumeDownload from './ResumeDownload'
-import { useTheme } from '../theme'
-import './Nav.css'
+import ResumeDownload from './ResumeDownload';
+import { useTheme } from '../theme';
+import './Nav.css';
 
 interface NavLink {
-  label: string
-  href: string
+  label: string;
+  href: string;
 }
 
 const links: NavLink[] = [
@@ -12,27 +12,36 @@ const links: NavLink[] = [
   { label: 'Skills', href: '#skills' },
   { label: 'Projects', href: '#projects' },
   { label: 'Contact', href: '#contact' },
-]
+];
 
 function ThemeIcon() {
   return (
     <svg width="16" height="16" viewBox="0 0 20 20" aria-hidden="true">
-      <circle cx="10" cy="10" r="8" fill="none" stroke="currentColor" strokeWidth="2" />
+      <circle
+        cx="10"
+        cy="10"
+        r="8"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+      />
       <path d="M10 2a8 8 0 0 1 0 16z" fill="currentColor" />
     </svg>
-  )
+  );
 }
 
 export default function Nav() {
-  const { theme, toggle } = useTheme()
-  const other = theme === 'dark' ? 'light' : 'dark'
+  const { theme, toggle } = useTheme();
+  const other = theme === 'dark' ? 'light' : 'dark';
 
   return (
     <nav className="nav">
       <div className="nav__inner container">
-        <a href="#top" className="nav__logo">JM</a>
+        <a href="#top" className="nav__logo">
+          JM
+        </a>
         <ul className="nav__links">
-          {links.map(l => (
+          {links.map((l) => (
             <li key={l.href} className="nav__section-link">
               <a href={l.href}>{l.label}</a>
             </li>
@@ -54,5 +63,5 @@ export default function Nav() {
         </ul>
       </div>
     </nav>
-  )
+  );
 }

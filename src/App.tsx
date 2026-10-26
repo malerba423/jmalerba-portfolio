@@ -1,9 +1,9 @@
-import Nav from './components/Nav'
-import Hero from './components/Hero'
-import Experience from './components/Experience'
-import Projects from './components/Projects'
-import Contact from './components/Contact'
-import './App.css'
+import Nav from './components/Nav';
+import Hero from './components/Hero';
+import Experience from './components/Experience';
+import Projects from './components/Projects';
+import Contact from './components/Contact';
+import './App.css';
 
 export default function App() {
   return (
@@ -24,5 +24,5 @@ export default function App() {
         </div>
       </footer>
     </>
-  )
+  );
 }

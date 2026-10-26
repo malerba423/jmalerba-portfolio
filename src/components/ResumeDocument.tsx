@@ -1,12 +1,20 @@
-import { Document, Page, Text, View, Link, StyleSheet, Font } from '@react-pdf/renderer'
-import { profile, experience, education, skills, projects } from '../data'
+import {
+  Document,
+  Page,
+  Text,
+  View,
+  Link,
+  StyleSheet,
+  Font,
+} from '@react-pdf/renderer';
+import { profile, experience, education, skills, projects } from '../data';
 
 // Keep words intact — hyphenated tech names look wrong and hurt ATS keyword matching.
-Font.registerHyphenationCallback(word => [word])
+Font.registerHyphenationCallback((word) => [word]);
 
-const ACCENT = '#B86E00'
-const TEXT = '#1a1a1a'
-const MUTED = '#555555'
+const ACCENT = '#B86E00';
+const TEXT = '#1a1a1a';
+const MUTED = '#555555';
 
 const s = StyleSheet.create({
   page: {
@@ -45,7 +53,7 @@ const s = StyleSheet.create({
   bulletDot: { width: 10 },
   bulletText: { flex: 1 },
   tech: { color: MUTED, fontSize: 8.5, marginTop: 3 },
-})
+});
 
 export default function ResumeDocument() {
   return (
@@ -55,23 +63,29 @@ export default function ResumeDocument() {
           <Text style={s.name}>{profile.name}</Text>
           <Text style={s.title}>{profile.title}</Text>
           <View style={s.contact}>
-            <Link src={`mailto:${profile.email}`} style={s.link}>{profile.email}</Link>
+            <Link src={`mailto:${profile.email}`} style={s.link}>
+              {profile.email}
+            </Link>
             <Text>{profile.phone}</Text>
-            <Link src={`https://${profile.website}`} style={s.link}>https://{profile.website}</Link>
+            <Link src={`https://${profile.website}`} style={s.link}>
+              https://{profile.website}
+            </Link>
           </View>
           <Text style={s.bio}>{profile.bio}</Text>
         </View>
 
         <View style={s.section}>
           <Text style={s.heading}>Experience</Text>
-          {experience.map(job => (
+          {experience.map((job) => (
             <View key={job.company} style={s.job} wrap={false}>
               <View style={s.jobHeader}>
-                <Text style={s.jobTitle}>{job.title} · {job.company}</Text>
+                <Text style={s.jobTitle}>
+                  {job.title} · {job.company}
+                </Text>
                 <Text style={s.jobMeta}>{job.dates}</Text>
               </View>
               <Text style={s.jobMeta}>{job.location}</Text>
-              {job.bullets.map(b => (
+              {job.bullets.map((b) => (
                 <View key={b} style={s.bullet}>
                   <Text style={s.bulletDot}>•</Text>
                   <Text style={s.bulletText}>{b}</Text>
@@ -95,7 +109,9 @@ export default function ResumeDocument() {
         <View style={s.section} wrap={false}>
           <Text style={s.heading}>Education</Text>
           <View style={s.jobHeader}>
-            <Text style={s.jobTitle}>{education.degree} · {education.school}</Text>
+            <Text style={s.jobTitle}>
+              {education.degree} · {education.school}
+            </Text>
             <Text style={s.jobMeta}>{education.year}</Text>
           </View>
           <Text style={s.jobMeta}>{education.details}</Text>
@@ -103,9 +119,11 @@ export default function ResumeDocument() {
 
         <View style={s.section}>
           <Text style={s.heading}>Selected Projects</Text>
-          {projects.map(p => (
+          {projects.map((p) => (
             <View key={p.title} style={s.job} wrap={false}>
-              <Text style={s.jobTitle}>{p.title} · <Text style={s.jobMeta}>{p.context}</Text></Text>
+              <Text style={s.jobTitle}>
+                {p.title} · <Text style={s.jobMeta}>{p.context}</Text>
+              </Text>
               <Text>{p.description}</Text>
               <Text style={s.tech}>{p.tech.join(' · ')}</Text>
             </View>
@@ -113,5 +131,5 @@ export default function ResumeDocument() {
         </View>
       </Page>
     </Document>
-  )
+  );
 }

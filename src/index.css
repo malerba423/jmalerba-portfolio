@@ -1,47 +1,49 @@
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
 :root {
-  --bg:            #eaf1f6;
-  --ink:           #10212e;
-  --on-ink:        #ffffff;
-  --card:          #ffffff;
-  --soft:          #f6f9fb;
-  --line:          #c8d6e0;
-  --grid:          #e3ebf1;
-  --body:          #2c4354;
-  --muted:         #3d5567;
-  --accent:        #b8461a;
-  --bar:           #10212e;
-  --on-bar:        #ffffff;
-  --on-ink-muted:  #d5e0e8;
+  --bg: #eaf1f6;
+  --ink: #10212e;
+  --on-ink: #ffffff;
+  --card: #ffffff;
+  --soft: #f6f9fb;
+  --line: #c8d6e0;
+  --grid: #e3ebf1;
+  --body: #2c4354;
+  --muted: #3d5567;
+  --accent: #b8461a;
+  --bar: #10212e;
+  --on-bar: #ffffff;
+  --on-ink-muted: #d5e0e8;
   --on-ink-accent: #ffb38f;
-  --link:          #1d5f8a;
-  --font:          'Geist', -apple-system, BlinkMacSystemFont, sans-serif;
-  --mono:          'Geist Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
-  --max-w:         1440px;
+  --link: #1d5f8a;
+  --font: 'Geist', -apple-system, BlinkMacSystemFont, sans-serif;
+  --mono: 'Geist Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+  --max-w: 1440px;
 }
 
 /* In the dark theme --ink becomes the light colour, so anything painted with it inverts. */
 :root[data-theme='dark'] {
-  --bg:            #5a2825;
-  --ink:           #f2f0ea;
-  --on-ink:        #121110;
-  --card:          #181715;
-  --soft:          #141312;
-  --line:          #24221f;
-  --grid:          #1c1b19;
-  --body:          #a19e96;
-  --muted:         #8a877f;
-  --accent:        oklch(0.82 0.13 85);
-  --bar:           #3b3834;
-  --on-bar:        #f2f0ea;
-  --on-ink-muted:  #55524c;
+  --bg: #5a2825;
+  --ink: #f2f0ea;
+  --on-ink: #121110;
+  --card: #181715;
+  --soft: #141312;
+  --line: #24221f;
+  --grid: #1c1b19;
+  --body: #a19e96;
+  --muted: #8a877f;
+  --accent: oklch(0.82 0.13 85);
+  --bar: #3b3834;
+  --on-bar: #f2f0ea;
+  --on-ink-muted: #55524c;
   --on-ink-accent: #7a5a0a;
-  --link:          oklch(0.82 0.13 85);
+  --link: oklch(0.82 0.13 85);
 }
 
 html {
@@ -55,7 +57,9 @@ body {
   font-size: 16px;
   line-height: 1.55;
   -webkit-font-smoothing: antialiased;
-  transition: background 0.25s, color 0.25s;
+  transition:
+    background 0.25s,
+    color 0.25s;
 }
 
 a {

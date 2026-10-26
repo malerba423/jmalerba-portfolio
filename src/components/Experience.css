@@ -223,7 +223,9 @@
   font-size: 13px;
   font-weight: 500;
   color: var(--muted);
-  transition: color 0.2s, border-color 0.2s;
+  transition:
+    color 0.2s,
+    border-color 0.2s;
 }
 
 .chip--on {

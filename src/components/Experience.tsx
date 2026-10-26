@@ -1,21 +1,21 @@
-import { useRef, useState, type PointerEvent } from "react";
-import { experience, profile, skills, type Job } from "../data";
-import ResumeDownload from "./ResumeDownload";
-import "./Experience.css";
+import { useRef, useState, type PointerEvent } from 'react';
+import { experience, profile, skills, type Job } from '../data';
+import ResumeDownload from './ResumeDownload';
+import './Experience.css';
 
 const MONTHS = [
-  "Jan",
-  "Feb",
-  "Mar",
-  "Apr",
-  "May",
-  "Jun",
-  "Jul",
-  "Aug",
-  "Sep",
-  "Oct",
-  "Nov",
-  "Dec",
+  'Jan',
+  'Feb',
+  'Mar',
+  'Apr',
+  'May',
+  'Jun',
+  'Jul',
+  'Aug',
+  'Sep',
+  'Oct',
+  'Nov',
+  'Dec',
 ];
 
 // Positions on the chart are month counts from January of the first year on the axis.
@@ -25,7 +25,7 @@ interface TimelineJob extends Job {
 }
 
 function parseMonth(value: string) {
-  const [year, month] = value.split("-").map(Number);
+  const [year, month] = value.split('-').map(Number);
   return { year, month: month - 1 };
 }
 
@@ -65,9 +65,9 @@ function formatDuration(months: number) {
   const y = Math.floor(months / 12);
   const m = months % 12;
   const parts = [];
-  if (y) parts.push(`${y} ${y === 1 ? "yr" : "yrs"}`);
-  if (m) parts.push(`${m} ${m === 1 ? "mo" : "mos"}`);
-  return parts.join(" ");
+  if (y) parts.push(`${y} ${y === 1 ? 'yr' : 'yrs'}`);
+  if (m) parts.push(`${m} ${m === 1 ? 'mo' : 'mos'}`);
+  return parts.join(' ');
 }
 
 export default function Experience() {
@@ -124,7 +124,7 @@ export default function Experience() {
     if (!(e.buttons & 1)) dragging.current = false;
     if (dragging.current) {
       pin(e.clientX, e.currentTarget);
-    } else if (e.pointerType === "mouse" && !previewPaused.current) {
+    } else if (e.pointerType === 'mouse' && !previewPaused.current) {
       setPreview(monthsAt(e.clientX, e.currentTarget));
     }
   };
@@ -168,7 +168,7 @@ export default function Experience() {
                 <div className="gantt__year" key={year}>
                   <span className="gantt__year-full">{year}</span>
                   <span className="gantt__year-short">
-                    {i % 2 === 0 ? `'${String(year).slice(2)}` : ""}
+                    {i % 2 === 0 ? `'${String(year).slice(2)}` : ''}
                   </span>
                 </div>
               ))}
@@ -194,12 +194,10 @@ export default function Experience() {
                   <button
                     type="button"
                     key={job.company}
-                    className={`gantt__row${i === activeIndex ? " gantt__row--active" : ""}`}
+                    className={`gantt__row${i === activeIndex ? ' gantt__row--active' : ''}`}
                     // Keyboard activation has no pointer position, so it jumps to the middle of the role.
                     onClick={(e) =>
-                      e.detail === 0
-                        ? goTo(i)
-                        : pin(e.clientX, e.currentTarget)
+                      e.detail === 0 ? goTo(i) : pin(e.clientX, e.currentTarget)
                     }
                     aria-label={`${job.company}, ${job.dates}`}
                     aria-pressed={i === activeIndex}
@@ -212,7 +210,7 @@ export default function Experience() {
                       }}
                     />
                     <span
-                      className={`gantt__label${inside ? " gantt__label--inside" : ""}`}
+                      className={`gantt__label${inside ? ' gantt__label--inside' : ''}`}
                       style={{ left: pct(inside ? job.from : job.to) }}
                     >
                       {job.company}
@@ -221,7 +219,7 @@ export default function Experience() {
                 );
               })}
               <div
-                className={`gantt__marker${preview === null ? "" : " gantt__marker--preview"}`}
+                className={`gantt__marker${preview === null ? '' : ' gantt__marker--preview'}`}
                 style={{ left: pct(shown) }}
                 aria-hidden="true"
               />
@@ -297,9 +295,9 @@ export default function Experience() {
                 </p>
                 <h3 className="role__company">Between roles.</h3>
                 <p className="role__gap">
-                  No role at this point on the timeline, between{" "}
+                  No role at this point on the timeline, between{' '}
                   {jobs[lastStarted].company} (
-                  {formatMonth(jobs[lastStarted].to)}) and{" "}
+                  {formatMonth(jobs[lastStarted].to)}) and{' '}
                   {jobs[nextIndex].company} ({formatMonth(jobs[nextIndex].from)}
                   ).
                 </p>
@@ -329,7 +327,7 @@ export default function Experience() {
             <ul className="role__chips">
               {allSkills.map((skill) => (
                 <li
-                  className={`chip${usedSkills.has(skill) ? " chip--on" : ""}`}
+                  className={`chip${usedSkills.has(skill) ? ' chip--on' : ''}`}
                   key={skill}
                 >
                   {skill}
