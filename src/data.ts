@@ -32,7 +32,7 @@ export const experience: Job[] = [
     end: '2026-09',
     tech: ['React', 'NodeJS', 'Adobe ColdFusion', 'Socket.IO', 'Stripe', 'MSSQL', 'PostgreSQL', 'AI-Assisted Development'],
     skills: [
-      'JavaScript / ES6',
+      'JavaScript',
       'React',
       'NodeJS',
       'Adobe ColdFusion',
@@ -69,7 +69,7 @@ export const experience: Job[] = [
     end: '2021-04',
     tech: ['JavaScript', 'React', 'NodeJS'],
     skills: [
-      'JavaScript / ES6',
+      'JavaScript',
       'React',
       'NodeJS',
     ],
@@ -87,7 +87,7 @@ export const experience: Job[] = [
     end: '2020-12',
     tech: ['React', 'Redux', 'NodeJS', 'Jest', 'PostgreSQL', 'AWS', 'Azure DevOps'],
     skills: [
-      'JavaScript / ES6',
+      'JavaScript',
       'React',
       'Redux / Redux Toolkit',
       'NodeJS',
@@ -160,7 +160,7 @@ export const education = {
 
 export const skills: Record<string, string[]> = {
   'Languages & Frameworks': [
-    'JavaScript / ES6', 'TypeScript', 'React', 'Redux / Redux Toolkit',
+    'JavaScript', 'TypeScript', 'React', 'Redux / Redux Toolkit',
     'NodeJS', 'Express', 'Adobe ColdFusion',
     'Socket.IO', 'Stripe', 'Knex',
     'Jest', 'Test-Driven Development',
