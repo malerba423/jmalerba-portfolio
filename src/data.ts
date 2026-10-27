@@ -78,7 +78,7 @@ export const experience: Job[] = [
     start: '2020-12',
     end: '2021-04',
     tech: ['JavaScript', 'React', 'NodeJS'],
-    skills: ['JavaScript', 'React', 'NodeJS'],
+    skills: ['JavaScript', 'React', 'NodeJS', 'C#', '.NET'],
     bullets: [
       'Built internal tooling and web applications within a large enterprise engineering organization.',
       'Gained further experience working at scale with larger codebases, more formal code review processes, and enterprise-grade organizational patterns.',
@@ -176,6 +176,8 @@ export const skills: Record<string, string[]> = {
     'Redux / Redux Toolkit',
     'NodeJS',
     'Express',
+    'C#',
+    '.NET',
     'Adobe ColdFusion',
     'Socket.IO',
     'Stripe',
