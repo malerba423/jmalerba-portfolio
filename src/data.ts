@@ -219,7 +219,7 @@ export const projects: Project[] = [
     title: 'Cookbook for Friends & Family',
     context: 'Personal project',
     description:
-      'Built a little cookboox to keep recipes and also import recipes from various websites and socials. Allows me and my family to easily add recipes and also share / collaborate on our kitchen time.',
+      'A little cookboox to keep recipes with family and friends. Add originals, import from websites and socials, and collaborate with friends in the kitchen.',
     tech: [
       'React',
       'TypeScript',
