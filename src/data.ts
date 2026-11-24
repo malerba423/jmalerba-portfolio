@@ -263,6 +263,8 @@ export const profile = {
   email: 'malerba423@gmail.com',
   phone: '(518) 881-8563',
   website: 'jmalerba.dev',
+  availability:
+    'Based in Bellingham, WA  |  Remote  |  Flexible across all U.S. time zones, including full Eastern Time hours',
   headline: { emphasis: '13 years', rest: 'building production systems.' },
   intro:
     'Across e-commerce, transportation, healthcare, and the bike industry. React & Node on the daily — with a solid grounding in the messy back-office systems that actually run businesses.',

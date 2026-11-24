@@ -29,6 +29,17 @@ const s = StyleSheet.create({
   title: { fontSize: 11, color: ACCENT, marginTop: 4 },
   contact: { flexDirection: 'row', gap: 12, marginTop: 6, color: MUTED },
   link: { color: MUTED, textDecoration: 'none' },
+  availability: {
+    marginTop: 8,
+    paddingVertical: 4,
+    paddingHorizontal: 8,
+    borderLeftWidth: 2,
+    borderLeftColor: ACCENT,
+    backgroundColor: '#FBF4EA',
+    fontSize: 9,
+    fontFamily: 'Helvetica-Bold',
+    color: TEXT,
+  },
   bio: { marginTop: 10 },
   section: { marginTop: 14 },
   heading: {
@@ -71,6 +82,7 @@ export default function ResumeDocument() {
               https://{profile.website}
             </Link>
           </View>
+          <Text style={s.availability}>{profile.availability}</Text>
           <Text style={s.bio}>{profile.bio}</Text>
         </View>
 
