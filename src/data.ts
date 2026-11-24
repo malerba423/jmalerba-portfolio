@@ -216,6 +216,28 @@ export const skills: Record<string, string[]> = {
 
 export const projects: Project[] = [
   {
+    title: 'Cookbook for Friends & Family',
+    context: 'Personal project',
+    description:
+      'Built a little cookboox to keep recipes and also import recipes from various websites and socials. Allows me and my family to easily add recipes and also share / collaborate on our kitchen time.',
+    tech: [
+      'React',
+      'TypeScript',
+      'NodeJS',
+      'Express',
+      'Vite',
+      'Drizzle',
+      'Neon',
+      'Postgres',
+      'Firebase',
+      'Cloudflare',
+      'Docker',
+    ],
+    github: 'https://github.com/malerba423/cucina-malerba',
+    live: 'https://recipes.jmalerba.dev',
+    proprietary: false,
+  },
+  {
     title: "Joel's Garage & Tinkerings",
     context: 'Personal project',
     description:
